@@ -14,6 +14,11 @@
       "id": "3",
       "name": "Project Gamma",
       "description": "Third Project"
+    },
+    {
+      "id": "46d1",
+      "name": "Project Sigma",
+      "description": "Total Sigma"
     }
   ],
   "tasks": [
@@ -63,6 +68,14 @@
       "description": "Launch the marketing campaign for the new product.",
       "dueDate": "2024-10-01",
       "projectId": "3",
+      "completed": false
+    },
+    {
+      "id": "1ba3",
+      "title": "New Task",
+      "description": "New Task",
+      "dueDate": "2024-08-01",
+      "projectId": "1",
       "completed": false
     }
   ],

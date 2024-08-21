@@ -35,8 +35,9 @@ function AddTaskForm({ projectId, onTaskAdded }: AddTaskFormProps) {
     <form onSubmit={handleSubmit}>
       <h3>Add a New Task</h3>
       <div>
-        <label>Task Title</label>
+        <label htmlFor="task-title">Task Title</label>
         <input
+          id="task-title"
           type="text"
           value={title}
           onChange={(e) => setTitle(e.target.value)}
@@ -44,16 +45,18 @@ function AddTaskForm({ projectId, onTaskAdded }: AddTaskFormProps) {
         />
       </div>
       <div>
-        <label>Description</label>
+        <label htmlFor="description">Description</label>
         <textarea
+          id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required
         />
       </div>
       <div>
-        <label>Due Date</label>
+        <label htmlFor="due-date">Due Date</label>
         <input
+          id="due-date"
           type="date"
           value={dueDate}
           onChange={(e) => setDueDate(e.target.value)}

@@ -1,0 +1,1 @@
+Objective: Write tests that use various selectors and queries (getBy, queryBy, findBy, getAllBy, queryAllBy, findAllBy) to interact with and test a simple Todo List component. Additionally, you can test usage screen.debug() to inspect the DOM during testing. You need to write tests according to its description
