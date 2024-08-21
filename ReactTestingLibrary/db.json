@@ -1,0 +1,106 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "name": "Project Alpha",
+      "description": "First Project"
+    },
+    {
+      "id": "2",
+      "name": "Project Beta",
+      "description": "Second Project"
+    },
+    {
+      "id": "3",
+      "name": "Project Gamma",
+      "description": "Third Project"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "001d",
+      "title": "Design Homepage",
+      "description": "Create the initial design for the homepage.",
+      "dueDate": "2024-08-08",
+      "projectId": "1",
+      "completed": false
+    },
+    {
+      "id": "2547",
+      "title": "Develop API",
+      "description": "Develop the REST API for user management.",
+      "dueDate": "2024-08-21",
+      "projectId": "1",
+      "completed": false
+    },
+    {
+      "id": "004d",
+      "title": "Write Documentation",
+      "description": "Write the project documentation.",
+      "dueDate": "2024-08-07",
+      "projectId": "1",
+      "completed": false
+    },
+    {
+      "id": "005e",
+      "title": "Setup CI/CD",
+      "description": "Setup continuous integration and deployment pipeline.",
+      "dueDate": "2024-09-01",
+      "projectId": "2",
+      "completed": false
+    },
+    {
+      "id": "006f",
+      "title": "User Testing",
+      "description": "Conduct user testing for the beta version.",
+      "dueDate": "2024-09-15",
+      "projectId": "2",
+      "completed": false
+    },
+    {
+      "id": "007g",
+      "title": "Launch Marketing Campaign",
+      "description": "Launch the marketing campaign for the new product.",
+      "dueDate": "2024-10-01",
+      "projectId": "3",
+      "completed": false
+    }
+  ],
+  "users": [
+    {
+      "id": "johnsmith",
+      "name": "John Smith",
+      "password": "12345678",
+      "email": "johnsmith@gmail.com",
+      "token": "jwt-token"
+    },
+    {
+      "id": "carlanotarobot",
+      "name": "Carla Notarobot",
+      "password": "12345678",
+      "email": "carlanotarobot@hotmail.com",
+      "token": "jwt-token"
+    },
+    {
+      "id": "ameliawarner",
+      "name": "Amelia Warner",
+      "password": "12345678",
+      "email": "ameliawarner@yahoo.com",
+      "token": "jwt-token"
+    },
+    {
+      "id": "test",
+      "name": "test Smith",
+      "password": "12345678",
+      "email": "test@gmail.com",
+      "token": "jwt-token"
+    },
+    {
+      "id": "test",
+      "name": "test Smith",
+      "password": "12345678",
+      "email": "test@gmail.com",
+      "token": "jwt-token"
+    }
+  ]
+}
