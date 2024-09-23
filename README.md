@@ -30,11 +30,12 @@ In the `Capstone-React-Testing-Library` folder, you will find the **Capstone Pro
 
 ## How to Use This Repository
 
-1. Clone the repository to your local machine.
-2. Navigate to the `Course-Tasks` folder to complete the tasks.
-3. Send proof of completion for tasks, there should be all test passed and 100% of coverage
-4. Once you're comfortable with the tasks, move on to the `Capstone-React-Testing-Library` folder to tackle the capstone project.
-5. Follow the instructions in each folder's `README` for more detailed guidance.
+1. Fork this repository to your GitHub account.
+2. Clone your forked repository to your local machine
+3. Navigate to the `Course-Tasks` folder to complete the tasks.
+4. Send proof of completion for tasks, there should be all test passed and 100% of coverage
+5. Once you're comfortable with the tasks, move on to the `Capstone-React-Testing-Library` folder to tackle the capstone project.
+6. Follow the instructions in each folder's `README` for more detailed guidance.
 
 ## Prerequisites
 
