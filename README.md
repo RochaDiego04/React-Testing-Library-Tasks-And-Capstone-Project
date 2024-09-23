@@ -1,60 +1,58 @@
-# Final task for React Testing Library
+# React Testing Library Course
 
-## Introduction
+Welcome to the **React Testing Library Course** repository! This repository is designed to help you build a solid foundation in testing React components using React Testing Library.
 
-```shell
-npm install
+## Course Overview
 
-npm run start for frontend
+This repository consists of two main sections:
 
-npm run server for backend
+### 1. **Course Tasks**
 
-```
+In the `Course-Tasks` folder, you will find three tasks aimed at building your skills step by step, after you finish tasks send proof of completion for all tasks with test coverage(you need 100% to pass)
 
-## 1 Cover given code with tests (minimum is 60% of coverage)
+### Task 1: Testing a Todo List Component
 
-## 2 Add tests in TDD approach and then add this features
+**Description**: Write tests using various selectors and queries (`getBy`, `queryBy`, `findBy`, etc.) to interact with a simple Todo List component. Additionally, use `screen.debug()` to inspect the DOM during testing.
 
-Before implementing the feature, you write tests that define the expected behavior. These tests will initially fail. Then Implement the feature and check if tests are green
+### Task 2: Simulating User Interactions
 
-### 1 Add Task Prioritization
+**Description**: Write tests that simulate various user interactions, such as button clicks, form input changes, and mouse events, verifying that the component's state and behavior update correctly.
 
-Objective: Add a priority level to tasks (e.g., Low, Medium, High) and ensure tasks can be sorted by priority.
+### Task 3: Testing Authentication Flow
 
-### 2 Implementing a Due Date Reminder Feature
+**Description**: Write tests for a login component to verify user authentication, including input handling, API calls, and redirects. Additionally, test a protected component to ensure proper redirection for unauthenticated users.
 
-Objective: Add a feature that highlights tasks with a due date within the next day and marks them with a "Due Soon" label.
+Each task includes detailed instructions and examples to guide you through the process of writing tests for React components.
 
-### 3 Task Progress Bar
+### 2. **Capstone Project**
 
-Objective: Add a progress bar to each project that shows the percentage of tasks completed. This bar should dynamically update as tasks are completed or reopened.
+In the `Capstone-React-Testing-Library` folder, you will find the **Capstone Project**. This project is a comprehensive, real-world example designed to test your understanding of the concepts you've learned throughout the course. The capstone project will require you to apply all the testing techniques and best practices covered in the tasks.
 
-## Mock server
+## How to Use This Repository
 
-This project uses json-Server. Get Familiar with [documentation](https://github.com/typicode/json-server#getting-started)
-Feed db.json it into [JSON Server](https://github.com/typicode/json-server) to GET your mock API. Make sure to check to know how to get and update your data.
+1. Clone the repository to your local machine.
+2. Navigate to the `Course-Tasks` folder to complete the tasks.
+3. Send proof of completion for tasks, there should be all test passed and 100% of coverage
+4. Once you're comfortable with the tasks, move on to the `Capstone-React-Testing-Library` folder to tackle the capstone project.
+5. Follow the instructions in each folder's `README` for more detailed guidance.
 
-```shell
-npm run server
-```
+## Prerequisites
 
-or
+- Basic understanding of React
+- Familiarity with JavaScript ES6+
+- Node.js installed on your machine
+- [React Testing Library](https://testing-library.com/docs/react-testing-library/intro) installed as a dependency
 
-```shell
-json-server --watch db.json --port 3001
-```
+## Getting Started
 
-### Authentication
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/yourusername/react-testing-library-course.git
+   ```
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+3. Start working through the tasks in the `Course-Tasks` folder or jump to the capstone project.
 
-Authentication is simplified
-
-> :warning: **Mock server stores passwords as plain text**:
-> Remember do not provide any sensitive data into it
-
-#### Login
-
-In order to log user in you need to try getting them by username (like `http://localhost:3000/users/johnsmith`), if you got 200 and user - login successfull, if 404 - username or password wrong.
-
-#### Signup
-
-In order to sign user up just `POST` the form contents to `http://localhost:3000/users`, 200 response means signup was succesfull and user is authenticated now.
+Happy testing!
