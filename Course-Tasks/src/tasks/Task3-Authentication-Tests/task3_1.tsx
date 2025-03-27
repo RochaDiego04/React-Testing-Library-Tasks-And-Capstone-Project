@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { login } from "./api";
 
 interface LoginComponentProps {
   onLogin: (credentials: { username: string; password: string }) => void;
@@ -7,10 +9,22 @@ interface LoginComponentProps {
 const LoginComponent: React.FC<LoginComponentProps> = ({ onLogin }) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    onLogin({ username, password });
+    setIsLoading(true);
+    try {
+      const { token } = await login({ username, password });
+      localStorage.setItem("token", token);
+      onLogin({ username, password });
+      navigate("/dashboard");
+    } catch (error) {
+      // Handle error
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   return (
