@@ -124,12 +124,9 @@ describe("SignUp Component", () => {
       </MemoryRouter>
     );
 
-    // Trigger validation for each field by:
-    // 1. Focusing on the input
-    // 2. Blurring (leaving) it without entering a value
     const fullNameInput = screen.getByLabelText(/FullName/i);
     await userEvent.click(fullNameInput);
-    await userEvent.tab(); // Moves focus away, triggering validation
+    await userEvent.tab();
 
     const emailInput = screen.getByLabelText(/Email/i);
     await userEvent.click(emailInput);
