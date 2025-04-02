@@ -1,4 +1,3 @@
-// Projects.test.tsx
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import axios from "axios";
@@ -43,7 +42,6 @@ describe("Projects Component", () => {
       </MemoryRouter>
     );
 
-    // Wait for data to load
     await waitFor(() => {
       expect(screen.getByText("Project Alpha")).toBeInTheDocument();
     });
@@ -80,14 +78,17 @@ describe("Projects Component", () => {
       .spyOn(console, "error")
       .mockImplementation(() => {});
     mockedAxios.get.mockRejectedValue(new Error("Network Error"));
+
     render(
       <MemoryRouter>
         <Projects />
       </MemoryRouter>
     );
+
     await waitFor(() => {
       expect(mockedAxios.get).toHaveBeenCalled();
     });
+
     expect(screen.queryByText("Project Alpha")).not.toBeInTheDocument();
     expect(consoleSpy).toHaveBeenCalledWith(
       "Error fetching projects",

@@ -101,6 +101,7 @@ const SignUp: React.FC = () => {
                 id="password"
                 label="Password"
                 name="password"
+                data-testid="password-input"
                 type="password"
                 autoComplete="current-password"
                 helperText={
@@ -117,6 +118,7 @@ const SignUp: React.FC = () => {
                 id="passwordConfirmation"
                 label="Password Confirmation"
                 name="passwordConfirmation"
+                data-testid="passwordConfirmation-input"
                 type="password"
                 helperText={
                   <ErrorMessage name="passwordConfirmation">
