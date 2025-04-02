@@ -8,6 +8,7 @@ import authReducer, {
   AuthState,
 } from "../authSlice";
 
+// api mock
 jest.mock("../../utils/api", () => ({
   authApi: {
     login: jest.fn(),
@@ -15,6 +16,7 @@ jest.mock("../../utils/api", () => ({
   },
 }));
 
+// localStorage mock
 const localStorageMock = {
   getItem: jest.fn(),
   setItem: jest.fn(),
@@ -23,6 +25,7 @@ const localStorageMock = {
 };
 Object.defineProperty(window, "localStorage", { value: localStorageMock });
 
+// user mock
 const mockUser: User = {
   id: "1",
   email: "test@example.com",
