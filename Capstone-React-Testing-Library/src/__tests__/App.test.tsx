@@ -1,10 +1,12 @@
-// App.test.tsx
 import { render, screen, waitFor } from "@testing-library/react";
 import { Provider } from "react-redux";
 import authReducer, { AuthState } from "../auth/authSlice";
 import App from "../App";
-
+import axios from "axios";
 import { configureStore, Store, UnknownAction } from "@reduxjs/toolkit";
+
+jest.mock("axios");
+const mockedAxios = axios as jest.Mocked<typeof axios>;
 
 function createTestStore(preloadedState?: { auth: AuthState }) {
   return configureStore({
@@ -19,8 +21,16 @@ describe("App Component", () => {
   let store: Store<unknown, UnknownAction, unknown>;
 
   beforeEach(() => {
+    mockedAxios.get.mockResolvedValue({
+      data: [],
+    });
+
     window.history.pushState({}, "", "/");
     store = createTestStore();
+  });
+
+  afterEach(() => {
+    jest.clearAllMocks();
   });
 
   it("redirects to login when not authenticated", async () => {
@@ -62,6 +72,11 @@ describe("App Component", () => {
         screen.getByRole("heading", { name: /your projects/i })
       ).toBeInTheDocument();
     });
+
+    // Verify axios mock was called
+    expect(mockedAxios.get).toHaveBeenCalledWith(
+      "http://localhost:3001/projects"
+    );
   });
 
   it("shows not found for invalid routes", async () => {
