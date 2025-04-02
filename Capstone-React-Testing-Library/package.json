@@ -9,9 +9,8 @@
     "@mui/material": "^5.16.7",
     "@reduxjs/toolkit": "^2.2.7",
     "@testing-library/jest-dom": "^5.17.0",
-    "@testing-library/react": "^12.1.2",
+    "@testing-library/react": "^16.0.0",
     "@testing-library/user-event": "^13.5.0",
-    "@types/node": "^16.18.105",
     "axios": "^1.7.4",
     "formik": "^2.4.6",
     "notistack": "^3.0.1",
@@ -28,7 +27,7 @@
     "start": "PORT=3006 react-scripts start",
     "server": "json-server --watch db.json --port 3001",
     "build": "react-scripts build",
-    "test": "react-scripts test --coverage",
+    "test": "react-scripts test --coverage --reporters=default --reporters=jest-junit --watchAll=false",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
@@ -50,23 +49,28 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.25.3",
-    "@babel/preset-react": "^7.24.7",
-    "@babel/preset-typescript": "^7.24.7",
+    "@babel/core": "^7.26.10",
+    "@babel/plugin-transform-runtime": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@babel/preset-react": "^7.26.3",
+    "@babel/preset-typescript": "^7.27.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/react": "^16.0.0",
     "@types/jest": "^29.5.12",
+    "@types/node": "^22.13.17",
     "@types/react": "^18.3.4",
     "@types/react-dom": "^18.3.0",
     "@types/react-router-dom": "^5.3.3",
     "babel-jest": "^29.7.0",
-    "jest": "^29.7.0",
-    "json-server": "^1.0.0-beta.2",
-    "ts-jest": "^29.2.4"
+    "jest-junit": "^16.0.0",
+    "json-server": "^1.0.0-beta.2"
   },
   "jest": {
     "moduleNameMapper": {
       "^axios$": "axios/dist/node/axios.cjs"
+    },
+    "transform": {
+      "^.+\\.(js|jsx|ts|tsx)$": "babel-jest"
     },
     "coverageReporters": [
       "html",
@@ -78,5 +82,9 @@
       "src/useAuth/**/*.{js,jsx,ts,tsx}",
       "src/auth/**/*.{js,jsx,ts,tsx}"
     ]
+  },
+  "jest-junit": {
+    "outputDirectory": "coverage/junit",
+    "outputName": "junit.xml"
   }
 }
