@@ -10,6 +10,7 @@ function AddTaskForm({ projectId, onTaskAdded }: AddTaskFormProps) {
   const [title, setTitle] = useState<string>("");
   const [description, setDescription] = useState<string>("");
   const [dueDate, setDueDate] = useState<string>("");
+  const [priorLevel, setPriorLevel] = useState<string>("low");
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
@@ -18,6 +19,7 @@ function AddTaskForm({ projectId, onTaskAdded }: AddTaskFormProps) {
         title,
         description,
         dueDate,
+        priorLevel,
         projectId: projectId ?? "defaultProjectId",
         completed: false,
       };
@@ -26,6 +28,7 @@ function AddTaskForm({ projectId, onTaskAdded }: AddTaskFormProps) {
       setTitle("");
       setDescription("");
       setDueDate("");
+      setPriorLevel("");
     } catch (error) {
       console.error("Error adding task", error);
     }
@@ -62,6 +65,20 @@ function AddTaskForm({ projectId, onTaskAdded }: AddTaskFormProps) {
           onChange={(e) => setDueDate(e.target.value)}
           required
         />
+      </div>
+      <div>
+        <label htmlFor="priority-level">Priority Level</label>
+        <select
+          name="priority-level"
+          id="priority-level"
+          value={priorLevel}
+          onChange={(e) => setPriorLevel(e.target.value)}
+          required
+        >
+          <option value="low">Low</option>
+          <option value="medium">Medium</option>
+          <option value="high">High</option>
+        </select>
       </div>
       <button type="submit">Add Task</button>
     </form>

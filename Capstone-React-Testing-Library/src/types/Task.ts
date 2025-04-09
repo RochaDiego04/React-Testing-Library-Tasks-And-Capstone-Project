@@ -3,6 +3,7 @@ export type Task = {
   id: number;
   title: string;
   description: string;
+  priorLevel: "low" | "medium" | "high";
   completed: boolean;
   projectId: number;
 };

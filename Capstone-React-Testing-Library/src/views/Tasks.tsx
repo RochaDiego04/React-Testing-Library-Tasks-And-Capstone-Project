@@ -81,11 +81,15 @@ function TaskList() {
       );
     });
 
+  const order = { low: 3, medium: 2, high: 1 };
+
   const sortedTasks = filteredTasks.sort((a: Task, b: Task) => {
     if (sortKey === "title") {
       return a.title.localeCompare(b.title);
     } else if (sortKey === "dueDate") {
       return new Date(a.dueDate).getTime() - new Date(b.dueDate).getTime();
+    } else if (sortKey === "priorLevel") {
+      return order[a.priorLevel] - order[b.priorLevel];
     }
     return 0;
   });
@@ -103,17 +107,26 @@ function TaskList() {
         />
       </div>
       <div>
-        <label>Filter: </label>
-        <select value={filter} onChange={(e) => setFilter(e.target.value)}>
+        <label htmlFor="filter-select">Filter: </label>
+        <select
+          id="filter-select"
+          value={filter}
+          onChange={(e) => setFilter(e.target.value)}
+        >
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="pending">Pending</option>
         </select>
 
-        <label>Sort By: </label>
-        <select value={sortKey} onChange={(e) => setSortKey(e.target.value)}>
+        <label htmlFor="sort-select">Sort By: </label>
+        <select
+          id="sort-select"
+          value={sortKey}
+          onChange={(e) => setSortKey(e.target.value)}
+        >
           <option value="title">Title</option>
           <option value="dueDate">Due Date</option>
+          <option value="priorLevel">Priority Level</option>
         </select>
       </div>
 
@@ -121,8 +134,9 @@ function TaskList() {
       <ul>
         {sortedTasks.map((task) => (
           <li key={task.id}>
-            <p>{task.title}</p>
-            <p>{task.description}</p>
+            <p>Title: {task.title}</p>
+            <p>Desccription:{task.description}</p>
+            <p>Priority Level: {task.priorLevel}</p>
             <p>Status: {task.completed ? "Completed" : "Pending"}</p>
             <button onClick={() => handleTaskCompletion(task.id)}>
               {task.completed ? "Mark as Pending" : "Mark as Completed"}
