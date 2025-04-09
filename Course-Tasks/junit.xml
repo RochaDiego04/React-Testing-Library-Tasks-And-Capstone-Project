@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="14" failures="0" errors="0" time="2.044">
+  <testsuite name="LoginComponent" errors="0" failures="0" skipped="0" timestamp="2025-04-09T21:52:57" time="0.511" tests="2">
+    <testcase classname="LoginComponent should allow user to enter username and password" name="LoginComponent should allow user to enter username and password" time="0.018">
+    </testcase>
+    <testcase classname="LoginComponent should call login API and handle successful login" name="LoginComponent should call login API and handle successful login" time="0.092">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2025-04-09T21:52:58" time="0.125" tests="4">
+    <testcase classname=" updates message on single click" name=" updates message on single click" time="0.021">
+    </testcase>
+    <testcase classname=" updates message on double click" name=" updates message on double click" time="0.016">
+    </testcase>
+    <testcase classname=" updates message on mouse over" name=" updates message on mouse over" time="0.005">
+    </testcase>
+    <testcase classname=" updates message on mouse out" name=" updates message on mouse out" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2025-04-09T21:52:58" time="0.081" tests="1">
+    <testcase classname=" increments counter on button click" name=" increments counter on button click" time="0.014">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2025-04-09T21:52:58" time="0.1" tests="3">
+    <testcase classname=" renders todo list and adds a new todo" name=" renders todo list and adds a new todo" time="0.008">
+    </testcase>
+    <testcase classname=" handles empty input correctly" name=" handles empty input correctly" time="0.004">
+    </testcase>
+    <testcase classname=" verifies findBy for asynchronous behavior" name=" verifies findBy for asynchronous behavior" time="0.006">
+    </testcase>
+  </testsuite>
+  <testsuite name="ProtectedComponent" errors="0" failures="0" skipped="0" timestamp="2025-04-09T21:52:58" time="0.071" tests="2">
+    <testcase classname="ProtectedComponent redirects to login if not authenticated" name="ProtectedComponent redirects to login if not authenticated" time="0.004">
+    </testcase>
+    <testcase classname="ProtectedComponent renders protected content when authenticated" name="ProtectedComponent renders protected content when authenticated" time="0.001">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2025-04-09T21:52:58" time="0.084" tests="1">
+    <testcase classname=" updates message on input change" name=" updates message on input change" time="0.024">
+    </testcase>
+  </testsuite>
+  <testsuite name="undefined" errors="0" failures="0" skipped="0" timestamp="2025-04-09T21:52:58" time="0.051" tests="1">
+    <testcase classname=" renders learn react link" name=" renders learn react link" time="0.002">
+    </testcase>
+  </testsuite>
+</testsuites>
