@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from "react";
+import { useState, FormEvent } from "react";
 import axios from "axios";
 
 interface AddProjectFormProps {
@@ -29,8 +29,9 @@ function AddProjectForm({ onProjectAdded }: AddProjectFormProps) {
     <form onSubmit={handleSubmit}>
       <h3>Add a New Project</h3>
       <div>
-        <label>Project Name</label>
+        <label htmlFor="project-name">Project Name</label>
         <input
+          id="project-name"
           type="text"
           value={name}
           onChange={(e) => setName(e.target.value)}
@@ -38,8 +39,9 @@ function AddProjectForm({ onProjectAdded }: AddProjectFormProps) {
         />
       </div>
       <div>
-        <label>Description</label>
+        <label htmlFor="description">Description</label>
         <textarea
+          id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
           required

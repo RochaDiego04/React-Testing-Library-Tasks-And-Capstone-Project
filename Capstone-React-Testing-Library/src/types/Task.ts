@@ -5,5 +5,5 @@ export type Task = {
   description: string;
   priorLevel: "low" | "medium" | "high";
   completed: boolean;
-  projectId: number;
+  projectId: number | string;
 };

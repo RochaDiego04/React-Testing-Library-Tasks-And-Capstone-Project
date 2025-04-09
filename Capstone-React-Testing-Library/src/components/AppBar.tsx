@@ -40,6 +40,7 @@ const ResponsiveAppBar: React.FC = () => {
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography
+            data-testid="mobile-title"
             variant="h6"
             noWrap
             component="a"
@@ -57,6 +58,7 @@ const ResponsiveAppBar: React.FC = () => {
           </Typography>
 
           <Typography
+            data-testid="desktop-title"
             variant="h5"
             noWrap
             component="a"
