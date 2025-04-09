@@ -30,7 +30,10 @@ function Projects() {
       <AddProjectForm onProjectAdded={handleProjectAdded} />
       <ul>
         {projects.map((project) => (
-          <li key={project.id}>
+          <li
+            key={project.id}
+            style={{ display: "flex", alignItems: "center", gap: "2rem" }}
+          >
             <Link to={`/projects/${project.id}`}>{project.name}</Link>
           </li>
         ))}

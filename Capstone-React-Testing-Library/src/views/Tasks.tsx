@@ -4,6 +4,7 @@ import axios from "axios";
 import { Task } from "../types/Task";
 import { Project } from "../types/Project";
 import AddTaskForm from "../components/AddTaskForm";
+import ProjectProgressBar from "../components/ProjectProgressBar";
 
 function TaskList() {
   const { id } = useParams<{ id: string }>();
@@ -103,6 +104,7 @@ function TaskList() {
   return (
     <div>
       <h2>Tasks for Project: {project ? project.name : "Loading..."}</h2>
+      {project && <ProjectProgressBar tasks={tasks} />}
       <div>
         <label>Search: </label>
         <input

@@ -85,7 +85,7 @@
       "dueDate": "2025-04-01",
       "priorLevel": "low",
       "projectId": "46d1",
-      "completed": false
+      "completed": true
     },
     {
       "id": "c0c7",
@@ -103,7 +103,7 @@
       "dueDate": "2025-04-25",
       "priorLevel": "low",
       "projectId": "46d1",
-      "completed": false
+      "completed": true
     }
   ],
   "users": [
