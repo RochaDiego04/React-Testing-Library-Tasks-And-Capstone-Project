@@ -1,4 +1,4 @@
-import { render, screen, waitFor } from "@testing-library/react";
+import { render, screen, waitFor, within } from "@testing-library/react";
 import axios from "axios";
 import { MemoryRouter, Route, Routes } from "react-router-dom";
 import { Project } from "../../types/Project";
@@ -42,7 +42,7 @@ describe("Tasks Component", () => {
 
   const mockTasks: Task[] = [
     {
-      dueDate: "2025-04-10",
+      dueDate: "2025-04-17",
       id: 101,
       title: "Plan team meeting",
       description:
@@ -52,7 +52,7 @@ describe("Tasks Component", () => {
       projectId: 501,
     },
     {
-      dueDate: new Date("2025-04-15").toISOString(),
+      dueDate: new Date("2025-04-25").toISOString(),
       id: 102,
       title: "Submit project proposal",
       description: "Finalize the proposal and submit it for review.",
@@ -284,6 +284,36 @@ describe("Tasks Component", () => {
     });
     await waitFor(() => {
       expect(screen.getByText(/submit project proposal/i)).toBeInTheDocument();
+    });
+  });
+
+  it("should display 'Due Soon' label for tasks due within 7 days", async () => {
+    jest.useFakeTimers().setSystemTime(new Date("2025-04-15"));
+
+    render(
+      <MemoryRouter initialEntries={["/projects/501/tasks"]}>
+        <Routes>
+          <Route path="/projects/:id/tasks" element={<TaskList />} />
+        </Routes>
+      </MemoryRouter>
+    );
+
+    await screen.findByText(/plan team meeting/i);
+
+    await waitFor(async () => {
+      const urgentTask = screen
+        .getByText(/title: plan team meeting/i)
+        .closest("li");
+      await waitFor(() => {
+        expect(within(urgentTask!).getByText(/Due Soon/i)).toBeInTheDocument();
+      });
+
+      const futureTask = screen
+        .getByText(/title: submit project proposal/i)
+        .closest("li");
+      await waitFor(() => {
+        expect(within(futureTask!).queryByText(/Due Soon/i)).toBeNull();
+      });
     });
   });
 });

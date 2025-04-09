@@ -37,6 +37,12 @@ function TaskList() {
     setTasks([...tasks, newTask]);
   };
 
+  const isDueSoonTask = (taskDueDate: string | Date) => {
+    const today = new Date();
+    const dueDate = new Date(taskDueDate);
+    return dueDate.getTime() - today.getTime() <= 7 * 24 * 60 * 60 * 1000;
+  };
+
   const handleTaskCompletion = async (taskId: number) => {
     try {
       const taskToUpdate = tasks.find((task) => task.id === taskId);
@@ -134,8 +140,11 @@ function TaskList() {
       <ul>
         {sortedTasks.map((task) => (
           <li key={task.id}>
-            <p>Title: {task.title}</p>
-            <p>Desccription:{task.description}</p>
+            <p>Title: {task.title}</p>{" "}
+            {isDueSoonTask(task.dueDate) ? (
+              <span style={{ fontWeight: "bold" }}>Due Soon</span>
+            ) : null}
+            <p>Description:{task.description}</p>
             <p>Priority Level: {task.priorLevel}</p>
             <p>Status: {task.completed ? "Completed" : "Pending"}</p>
             <button onClick={() => handleTaskCompletion(task.id)}>
